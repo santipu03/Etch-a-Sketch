@@ -1,6 +1,7 @@
 // DOM selection
 const container = document.querySelector(".container");
-const button = document.querySelector(".button");
+const clearButton = document.querySelector(".clear-button");
+const resizeButton = document.querySelector(".resize-button");
 
 // define variables
 let squaresPerSide = 16
@@ -11,12 +12,12 @@ let totalSquares = squaresPerSide * squaresPerSide;
 // function to get the squares per side of the new grid
 const getNewGrid = () => {
 
-    squaresPerSide = parseInt(prompt("choose the number of squares per side"));
+    squaresPerSide = parseInt(prompt("choose the number of squares per side (max number is 100)"));
     if (isNaN(squaresPerSide) || squaresPerSide == 0 || squaresPerSide > 100) {
         return alert("Insert only numbers please (max number is 100)");
     }
 
-    clearGrid();
+    removeGrid();
     totalSquares = squaresPerSide * squaresPerSide;
 
     createGrid();
@@ -38,13 +39,23 @@ const createGrid = () => {
 };
 
 
-// clear the actual grid
-const clearGrid = () => {
+// remove the actual grid
+const removeGrid = () => {
     for (let i = 0; i < totalSquares; i++){
         const divToClear = document.querySelector(".item");
         divToClear.remove();
     }
 }
+
+// clear the grid
+const clearGrid = () => {
+    const items = document.querySelectorAll(".item");
+    items.forEach(item => {
+        item.style.backgroundColor = "#ddd";
+    })
+}
+
+
 
 //function to add the hover functionality
 const addHover = () => {
@@ -61,5 +72,5 @@ window.addEventListener("load", createGrid)
 
 
 //button listener to create the new grid
-button.addEventListener("click", getNewGrid);
-
+clearButton.addEventListener("click", clearGrid);
+resizeButton.addEventListener("click", getNewGrid);
