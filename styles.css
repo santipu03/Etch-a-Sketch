@@ -3,21 +3,32 @@
     box-sizing: border-box;
 }
 
+body {
+   font-family: Arial, Helvetica, sans-serif;
+   text-align: center;
+}
 
+.title {
+    font-size: 30px;
+    margin: 15px;
+}
 
+button {
+    margin-bottom: 15px;
+}
 .container {
-    height: 100vh;
-    width: 100vw;
+    height: 80vh;
+    width: 90vw;
+    background-color: #cccccc;
     padding: 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+    margin: 0 auto;
+    display: grid;
+    /* grid-template-columns: repeat(16, auto);  */
+    /* grid-template-rows: repeat(16,auto); */
+    justify-content: stretch;
+    align-content: stretch;
 }
 
 .item {
-    width: 20px;
-    height: 20px;
     border: 1px solid black;
-    margin: 5px;
 }

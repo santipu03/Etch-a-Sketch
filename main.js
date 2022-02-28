@@ -5,3 +5,7 @@ for (let i = 0; i < 256; i++){
     div.classList.add("item");
     container.append(div);
 };
+
+
+container.style.gridTemplateColumns = "repeat(16, auto)";
+container.style.gridTemplateRows = "repeat(16, auto)";
