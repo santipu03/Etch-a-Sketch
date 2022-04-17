@@ -8,3 +8,5 @@ The design is rudimentary but the javascript requires knowledge on:
  - The use of functions and events
  - Use of variables and changing them
  - Conditionals and loops
+
+LIVE DEMO --> https://santipu03.github.io/Etch-a-Sketch/
